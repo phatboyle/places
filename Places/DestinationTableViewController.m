@@ -8,8 +8,6 @@
 
 #import "DestinationTableViewController.h"
 #import "ImageViewController.h"
-#import "FlickrAnnotation.h"
-#import "MapViewController.h"
 
 @interface DestinationTableViewController ()
 
@@ -108,33 +106,11 @@
     
 }
 
-- (NSArray*) getAnnotations{
-    NSMutableArray* annoList = [NSMutableArray arrayWithCapacity:[self.photos count]];
-    for (NSDictionary* p in self.photos){
-        FlickrAnnotation* f = [FlickrAnnotation annotation:p];
-        NSLog(@"title: %@", [f title]);
-        NSLog(@"title: %@", [f subtitle]);
-        NSLog(@"lat: %f", [f coordinate].latitude);
-        NSLog(@"long: %f", [f coordinate].longitude);
-        
-        [annoList addObject: f];
-    }
-    NSLog(@"print annolist %@", annoList);
-    return annoList;
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    NSDictionary *imageDictionary = [self.photos objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+    [[segue destinationViewController ] setImage:imageDictionary withTitle:self.title];
+    
 }
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"loadMap"]){
-        NSLog(@"prepareForSegue");
-        [[segue destinationViewController] setAnnotations:self.getAnnotations];
-    }
-    if ([segue.identifier isEqualToString:@"showPhoto"]){
-        NSDictionary *imageDictionary = [self.photos objectAtIndex:self.tableView.indexPathForSelectedRow.row];
-        [[segue destinationViewController] setImage:imageDictionary withTitle:self.title];
-    }
-}
-
 
 /*
 // Override to support conditional editing of the table view.
