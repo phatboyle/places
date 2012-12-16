@@ -1,5 +1,5 @@
 //
-//  PlacesContentViewController.h
+//  DetailViewController.h
 //  Places
 //
 //  Created by Boyle, Patrick on 10/12/12.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PlacesContentViewController : UITableViewController
+@interface DetailViewController : UITableViewController
 
 @property (nonatomic, weak) NSArray * photos;
 

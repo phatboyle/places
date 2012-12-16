@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="11G56" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="8Gi-yB-SGg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="11G56" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="8Gi-yB-SGg">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--Top Places View Controller-->
@@ -87,7 +87,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="KO0-nP-uEi" kind="push" id="xUt-YC-GnM"/>
+                                    <segue destination="KO0-nP-uEi" kind="push" identifier="ShowImageSegue" id="xUt-YC-GnM"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -96,11 +96,41 @@
                             <outlet property="delegate" destination="P7O-ok-ofl" id="VJR-MF-R3M"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="5Ne-QY-8ax"/>
+                    <navigationItem key="navigationItem" id="5Ne-QY-8ax">
+                        <barButtonItem key="rightBarButtonItem" title="Map" id="xdc-mi-JGS">
+                            <connections>
+                                <segue destination="hkn-lZ-d18" kind="push" identifier="MapSegue" id="FAB-nT-lPQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OF0-ql-5V6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4323" y="811"/>
+            <point key="canvasLocation" x="3707" y="1087"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tRE-25-cDn">
+            <objects>
+                <viewController id="hkn-lZ-d18" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uaa-zn-eZL">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="azs-fJ-YEO">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="GjR-p6-Clj"/>
+                    <connections>
+                        <outlet property="view" destination="azs-fJ-YEO" id="I3N-L5-Oqt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZuI-dS-h9G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4336" y="1033"/>
         </scene>
         <!--Destination Table View Controller-->
         <scene sceneID="ThW-u8-NMZ">
@@ -173,7 +203,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zcm-eM-Pdp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4617" y="111"/>
+            <point key="canvasLocation" x="4661" y="3"/>
         </scene>
         <!--Navigation Controller - Top Places-->
         <scene sceneID="gWW-qF-FgS">
@@ -211,7 +241,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YZL-DH-lE1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3797" y="811"/>
+            <point key="canvasLocation" x="3153" y="1095"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="p1f-gf-hse">

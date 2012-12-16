@@ -1,18 +1,18 @@
 //
-//  PlacesContentViewController.m
+//  DetailViewController.m
 //  Places
 //
 //  Created by Boyle, Patrick on 10/12/12.
 //  Copyright (c) 2012 Pat Boyle. All rights reserved.
 //
 
-#import "PlacesContentViewController.h"
+#import "DetailViewController.h"
 
-@interface PlacesContentViewController ()
+@interface DetailViewController ()
 
 @end
 
-@implementation PlacesContentViewController
+@implementation DetailViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {

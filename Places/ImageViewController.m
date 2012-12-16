@@ -21,30 +21,34 @@
 @synthesize photoDict;
 
 
+-(void)clearRecentList {
+    // for testing only
+    NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *photosList = [[settings arrayForKey:@"key.recentphotos"] mutableCopy];
+    [photosList removeAllObjects];
+    [settings setObject:photosList forKey:@"key.recentphotos"];
+    [settings synchronize];
+}
+
 -(void)updateRecentList {
     NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
     NSMutableArray *photosList = [[settings arrayForKey:@"key.recentphotos"] mutableCopy];
-    NSLog(@"getting NSUserDefaults %d", [photosList count]);
+    NSLog(@"getting NSUserDefaults photoList count %d", [photosList count]);
     
     if (!photosList) {
         photosList = [NSMutableArray array];
     }
     
-    while ([photosList count] > 19) {
+    
+    while ([photosList count] > 5) {
         [photosList removeLastObject];
     }
     
-    for (int i=0; i<[photosList count]; i++)
-    {
-        NSDictionary *photo = [photosList objectAtIndex:i];
-        if ([[photo objectForKey:@"photoID"] isEqualToString:[self.photoDict objectForKey:@"photoID"]]){
-            [photosList removeObjectAtIndex:i];
-        }
+    if ([self photoDict] != nil){
+        [photosList addObject:[self photoDict]];
+        [settings setObject:photosList forKey:@"key.recentphotos"];
+        [settings synchronize];
     }
-    
-    [photosList addObject:[self photoDict]];
-    [settings setObject:photosList forKey:@"key.recentphotos"];
-    [settings synchronize];
     
 }
 -(void)updateCache: (NSData *) image{
@@ -64,8 +68,6 @@
     return self.imageView;
 }
 
-//- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(float)scale
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -78,11 +80,9 @@
     [self updateRecentList];
     self.scrollView.minimumZoomScale = 0.5;
     self.scrollView.maximumZoomScale = 2.0;
-
 	float widthRatio = self.view.bounds.size.width / self.imageView.bounds.size.width;
     float heightRatio = self.view.bounds.size.height / self.imageView.bounds.size.height;
     NSLog(@"widthRatio, heightRatio is: %f, %f, %f", widthRatio, heightRatio, MAX(widthRatio, heightRatio));
-    
     self.scrollView.zoomScale = MAX(widthRatio,heightRatio);
 }
 
