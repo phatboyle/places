@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="11G56" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="8Gi-yB-SGg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="8Gi-yB-SGg">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
@@ -99,7 +99,7 @@
                     <navigationItem key="navigationItem" id="5Ne-QY-8ax">
                         <barButtonItem key="rightBarButtonItem" title="Map" id="xdc-mi-JGS">
                             <connections>
-                                <segue destination="hkn-lZ-d18" kind="push" identifier="MapSegue" id="FAB-nT-lPQ"/>
+                                <segue destination="djl-sM-X3Q" kind="push" identifier="MapSegue" id="39A-7n-4GE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -108,29 +108,29 @@
             </objects>
             <point key="canvasLocation" x="3707" y="1087"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="tRE-25-cDn">
+        <!--Map View Controller-->
+        <scene sceneID="S75-6n-PsY">
             <objects>
-                <viewController id="hkn-lZ-d18" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="uaa-zn-eZL">
+                <viewController id="djl-sM-X3Q" customClass="MapViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g5J-iU-hS7">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="azs-fJ-YEO">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="1z1-sC-vBL">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="GjR-p6-Clj"/>
+                    <navigationItem key="navigationItem" id="Syz-XX-6CB"/>
                     <connections>
-                        <outlet property="view" destination="azs-fJ-YEO" id="I3N-L5-Oqt"/>
+                        <outlet property="mapView" destination="1z1-sC-vBL" id="Erg-i2-yYt"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZuI-dS-h9G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j6t-yw-HRv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4336" y="1033"/>
+            <point key="canvasLocation" x="4249" y="1069"/>
         </scene>
         <!--Destination Table View Controller-->
         <scene sceneID="ThW-u8-NMZ">
@@ -189,7 +189,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="x0U-fA-xzv">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="buL-jy-3sQ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -197,8 +197,8 @@
                     </scrollView>
                     <navigationItem key="navigationItem" id="HRO-x9-meS"/>
                     <connections>
-                        <outlet property="imageView" destination="x0U-fA-xzv" id="k9E-zP-ryt"/>
                         <outlet property="scrollView" destination="wle-ab-X2N" id="aYq-0q-Ce0"/>
+                        <outlet property="view" destination="buL-jy-3sQ" id="HP5-n1-2lE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zcm-eM-Pdp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -263,24 +263,6 @@
             <point key="canvasLocation" x="2456" y="430"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="DestinationTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DestinationTableViewController.h"/>
-        </class>
-        <class className="ImageViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ImageViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="RecentTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RecentTableViewController.h"/>
-        </class>
-        <class className="TopPlacesViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TopPlacesViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

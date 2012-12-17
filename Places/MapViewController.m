@@ -15,20 +15,19 @@
 @implementation MapViewController
 
 @synthesize annotations = _annotations;
+@synthesize mapView = _mapView;
+@synthesize delegate = _delegate;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+-(void)setMapView:(MKMapView *)mapView
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+    _mapView = mapView;
+    [self updateMapView];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    self.mapView.delegate = self;
 }
 
 - (void)updateMapView
@@ -42,4 +41,5 @@
     _annotations = annotations;
     [self updateMapView];
 }
+
 @end

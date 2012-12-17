@@ -9,9 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
+@protocol MapViewControllerDelegate <NSObject>
+@end
+
 @interface MapViewController : UIViewController
 
 @property (nonatomic, strong) NSArray *annotations;  // of id <MKAnnotations>
+@property (nonatomic, weak) id <MapViewControllerDelegate> delegate;
 
 @end
 
