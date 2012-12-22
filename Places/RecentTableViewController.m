@@ -9,6 +9,7 @@
 #import "RecentTableViewController.h"
 #import "ImageViewController.h"
 #import "FlickrPhotoAnnotation.h"
+#import "MapViewController.h"
 
 @interface RecentTableViewController ()
 
@@ -81,12 +82,12 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue description] == @"MapSegue"){
-        NSLog(@"mapsegue");
-        [[segue destinationViewController] setAnnotation:[self mapAnnotations]];
+    if ([segue.identifier isEqualToString:@"MapSegue"]){
+        NSLog(@"MapSegue");
+        [[segue destinationViewController] setAnnotations:[self mapAnnotations]];
     }
     
-    if ([segue description] == @"ShowImageSegue"){
+    if ([segue.identifier isEqualToString:@"ShowImageSegue"]){
     NSDictionary *imageDict = [self.photoList objectAtIndex:self.tableView.indexPathForSelectedRow.row];
     [[segue destinationViewController] setImage:imageDict withTitle:self.title];
     }

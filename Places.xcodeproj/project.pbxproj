@@ -23,8 +23,6 @@
 		F131F6D5162A7BB80009CB77 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F131F6D4162A7BB80009CB77 /* ImageViewController.m */; };
 		F131F6EA162B9CA80009CB77 /* RecentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F131F6E9162B9CA70009CB77 /* RecentTableViewController.m */; };
 		F15236E3167F022E00BFF917 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F15236E2167F022E00BFF917 /* MapKit.framework */; };
-		F1D0B55B167DA46000F2CAE4 /* DestinationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D0B558167DA46000F2CAE4 /* DestinationViewController.m */; };
-		F1D0B55C167DA46000F2CAE4 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D0B55A167DA46000F2CAE4 /* DetailViewController.m */; };
 		F1D0B564167DAA1800F2CAE4 /* FlickrPhotoAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D0B563167DAA1800F2CAE4 /* FlickrPhotoAnnotation.m */; };
 		F1D0B567167E4ACF00F2CAE4 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D0B566167E4ACE00F2CAE4 /* MapViewController.m */; };
 		F1F6B22316325A4E009BD9B7 /* DiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F6B22216325A4E009BD9B7 /* DiskCache.m */; };
@@ -57,10 +55,6 @@
 		F131F6E8162B9CA70009CB77 /* RecentTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentTableViewController.h; sourceTree = "<group>"; };
 		F131F6E9162B9CA70009CB77 /* RecentTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentTableViewController.m; sourceTree = "<group>"; };
 		F15236E2167F022E00BFF917 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		F1D0B557167DA46000F2CAE4 /* DestinationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestinationViewController.h; sourceTree = "<group>"; };
-		F1D0B558167DA46000F2CAE4 /* DestinationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinationViewController.m; sourceTree = "<group>"; };
-		F1D0B559167DA46000F2CAE4 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		F1D0B55A167DA46000F2CAE4 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		F1D0B562167DAA1800F2CAE4 /* FlickrPhotoAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrPhotoAnnotation.h; sourceTree = "<group>"; };
 		F1D0B563167DAA1800F2CAE4 /* FlickrPhotoAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrPhotoAnnotation.m; sourceTree = "<group>"; };
 		F1D0B565167E4ACE00F2CAE4 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
@@ -162,10 +156,6 @@
 				F1D0B566167E4ACE00F2CAE4 /* MapViewController.m */,
 				F131F6D3162A7BB80009CB77 /* ImageViewController.h */,
 				F131F6D4162A7BB80009CB77 /* ImageViewController.m */,
-				F1D0B557167DA46000F2CAE4 /* DestinationViewController.h */,
-				F1D0B558167DA46000F2CAE4 /* DestinationViewController.m */,
-				F1D0B559167DA46000F2CAE4 /* DetailViewController.h */,
-				F1D0B55A167DA46000F2CAE4 /* DetailViewController.m */,
 				F131F6C11629F6A00009CB77 /* DestinationTableViewController.h */,
 				F131F6C21629F6A00009CB77 /* DestinationTableViewController.m */,
 				F11857081622687300398592 /* TopPlacesViewController.h */,
@@ -249,8 +239,6 @@
 				F131F6D5162A7BB80009CB77 /* ImageViewController.m in Sources */,
 				F131F6EA162B9CA80009CB77 /* RecentTableViewController.m in Sources */,
 				F1F6B22316325A4E009BD9B7 /* DiskCache.m in Sources */,
-				F1D0B55B167DA46000F2CAE4 /* DestinationViewController.m in Sources */,
-				F1D0B55C167DA46000F2CAE4 /* DetailViewController.m in Sources */,
 				F1D0B564167DAA1800F2CAE4 /* FlickrPhotoAnnotation.m in Sources */,
 				F1D0B567167E4ACF00F2CAE4 /* MapViewController.m in Sources */,
 			);

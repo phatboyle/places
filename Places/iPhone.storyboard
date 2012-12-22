@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="8Gi-yB-SGg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="11G56" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="8Gi-yB-SGg">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
@@ -130,7 +130,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j6t-yw-HRv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4249" y="1069"/>
+            <point key="canvasLocation" x="4505" y="941"/>
         </scene>
         <!--Destination Table View Controller-->
         <scene sceneID="ThW-u8-NMZ">
@@ -166,7 +166,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="KO0-nP-uEi" kind="push" id="HJS-bR-LDc"/>
+                                    <segue destination="KO0-nP-uEi" kind="push" identifier="ShowImageSegue" id="HJS-bR-LDc"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -197,6 +197,7 @@
                     </scrollView>
                     <navigationItem key="navigationItem" id="HRO-x9-meS"/>
                     <connections>
+                        <outlet property="imageView" destination="buL-jy-3sQ" id="3Mg-Wh-GJC"/>
                         <outlet property="scrollView" destination="wle-ab-X2N" id="aYq-0q-Ce0"/>
                         <outlet property="view" destination="buL-jy-3sQ" id="HP5-n1-2lE"/>
                     </connections>
@@ -269,6 +270,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="xUt-YC-GnM"/>
+        <segue reference="HJS-bR-LDc"/>
     </inferredMetricsTieBreakers>
 </document>

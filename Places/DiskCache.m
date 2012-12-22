@@ -17,8 +17,8 @@
 
 static NSURL *cacheURL;
 
-+ (NSFileManager *) filemanager {
-    NSFileManager * fm = [[NSFileManager alloc] init];
++ (NSFileManager*) filemanager {
+    NSFileManager* fm = [[NSFileManager alloc] init];
     return fm;
 }
 
@@ -39,13 +39,11 @@ static NSURL *cacheURL;
 
 +(void) storeData: (NSString *) key: (NSData *) data {
     //TODO: if the file is already there then don't write anything
-    [   self trimCache];
+    [self trimCache];
     NSLog(@"%@",[[self getUrlForFile:key]absoluteString]);
     if (![[self filemanager] fileExistsAtPath:[[self getUrlForFile:key] absoluteString] ]){
         [data writeToURL:[self getUrlForFile:key] atomically:YES];
     }
-    // in addition, check to see how many files are there
-    
 }
 
 +(void) trimCache
