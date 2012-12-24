@@ -8,8 +8,6 @@
 
 #import "DiskCache.h"
 
-// TODO: trim cache
-// put in logging
 // check dir:  ~/library/application support/iphone simulator
 
 

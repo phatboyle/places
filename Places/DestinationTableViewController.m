@@ -8,6 +8,8 @@
 
 #import "DestinationTableViewController.h"
 #import "ImageViewController.h"
+#import "MapViewController.h"
+#import "FlickrPhotoAnnotation.h"
 
 @interface DestinationTableViewController ()
 
@@ -71,11 +73,29 @@
     
 }
 
+- (NSArray *)mapAnnotations
+{
+    NSMutableArray *annotations = [NSMutableArray arrayWithCapacity:[self.photos count]];
+    for (NSDictionary *photo in self.photos) {
+        [annotations addObject:[FlickrPhotoAnnotation annotationForPhoto:photo]];
+    }
+    return annotations;
+}
+
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"ShowImageSegue"]){
     NSDictionary *imageDictionary = [self.photos objectAtIndex:self.tableView.indexPathForSelectedRow.row];
     [[segue destinationViewController ] setImage:imageDictionary withTitle:self.title];
     }
+    if ([segue.identifier isEqualToString:@"MapSegue"]){
+        [[segue destinationViewController] setAnnotations: self.mapAnnotations];
+    }
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    return YES;
 }
 
 
