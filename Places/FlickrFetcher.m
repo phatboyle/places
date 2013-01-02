@@ -21,7 +21,7 @@
     NSError *error = nil;
     NSDictionary *results = jsonData ? [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves error:&error] : nil;
     if (error) NSLog(@"[%@ %@] JSON error: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), error.localizedDescription);
-    // NSLog(@"[%@ %@] received %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), results);
+    NSLog(@"[%@ %@] received %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), results);
     return results;
 }
 
@@ -45,8 +45,11 @@
         NSString *request = [NSString stringWithFormat:@"http://api.flickr.com/services/rest/?method=flickr.photos.search&place_id=%@&per_page=%d&extras=original_format,tags,description,geo,date_upload,owner_name,place_url", placeId, maxResults];
         NSString *placeName = [place objectForKey:FLICKR_PLACE_NAME];
         photos = [[self executeFlickrFetch:request] valueForKeyPath:@"photos.photo"];
+        //NSLog(@"mark3 %@", [photos description]);
         for (NSMutableDictionary *photo in photos) {
+            //NSLog(@"mark1 %@", photo);
             [photo setObject:placeName forKey:FLICKR_PHOTO_PLACE_NAME];
+            //NSLog(@"mark2 %@", photo);
         }
     }
     return photos;

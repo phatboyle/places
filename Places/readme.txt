@@ -27,3 +27,10 @@ make sure images are zoomed and centered properly
 extra credit
 make the fancy annotation
 reset map so it sooms in on hte annotations
+
+
+--new--
+finish the storyboard to display one of the lists
+see if adding a picture with core data works with a test process
+get the 'visit' button working
+get 'unvisit' button working

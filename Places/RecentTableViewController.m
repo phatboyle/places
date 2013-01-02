@@ -24,6 +24,7 @@
     NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
     photoList = [settings objectForKey:@"key.recentphotos"];
     NSLog(@"loadRecents photo count %d",[photoList count]);
+    
 }
 
 
@@ -32,6 +33,8 @@
     [super viewDidLoad];
     [self loadRecents];
     self.clearsSelectionOnViewWillAppear = NO;
+    
+    NSLog(@"viewDidLoad in RecentTableViewController");
 }
 
 
@@ -40,11 +43,15 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
+    
+    NSLog(@"numberOfRowsInSection in RecentTableViewController");
     return [[self photoList] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    NSLog(@"cellForRowAtIndexPath in RecentTableViewController");
 
     static NSString *CellIdentifier = @"Recent Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
