@@ -9,6 +9,7 @@
 #import "MyVacationsTableViewController.h"
 #import "FlickrFetcher.h"
 #import "Photo+Flickr.h"
+#import "VacationHelper.h"
 
 @interface MyVacationsTableViewController ()
 @property (nonatomic, strong) UIManagedDocument *vacationDatabase;
@@ -19,45 +20,17 @@
 @synthesize vacationDatabase = _vacationDatabase;
 @synthesize vacationDbList = _vacationDbList;
 
-// get a list of the vacation files that are in the directory (let's simplify by having only one at this point)
-// display it
-// when you pick it, segue to VacationDetailViewController
-
-
--(void) createBasicVacation:(UIManagedDocument *) document
-{   // creates a basic vacation with the first 5 photos in the list. (should change this to a specific place)
-    dispatch_queue_t fetchQ = dispatch_queue_create("flickr fetcher", NULL);
-    dispatch_async(fetchQ, ^(void){
-        NSArray* photos = [FlickrFetcher photosInPlace:<#(NSDictionary *)#> maxResults:50];
-        [document.managedObjectContext performBlock:^{
-            int i=0;
-            for (NSDictionary *flickrInfo in photos) {
-                NSLog(@"flickrFetched %@", flickrInfo);
-                [Photo photoWithFlickrInfo:flickrInfo inManagedObjectContext:document.managedObjectContext];
-                i++;
-                if (i>5) break;
-            }
-            [document saveToURL:document.fileURL forSaveOperation:UIDocumentSaveForOverwriting completionHandler:NULL];
-            NSLog(@"managed context %@", document.managedObjectContext);
-        }];
-    });
-    dispatch_release(fetchQ);
-    NSLog(@"exiting MyVacationsTableViewController: createBasicVacation");
-}
-
-
-
 -(void)useDocument
 {
     if (![[NSFileManager defaultManager] fileExistsAtPath:[self.vacationDatabase.fileURL path]]){
         [self.vacationDatabase saveToURL:self.vacationDatabase.fileURL forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success) {
-            [self createBasicVacation:[self vacationDatabase]];
+            //[self createBasicVacation:[self vacationDatabase]];
         }];
         
     } else if (self.vacationDatabase.documentState == UIDocumentStateClosed){
         [self.vacationDatabase openWithCompletionHandler:^(BOOL success){
         }];
-        [self createBasicVacation:[self vacationDatabase]];
+        //[self createBasicVacation:[self vacationDatabase]];
         NSLog(@"useDocument: opened database");
         
         
@@ -95,11 +68,8 @@
 {
     // let's simplify by just grabbing the one db that is on the disk
     if (!_vacationDatabase){
-        NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-        url = [url URLByAppendingPathComponent:@"myVacationDatabase"];
-        self.vacationDatabase = [[UIManagedDocument alloc] initWithFileURL:url];
+        self.vacationDatabase = [VacationHelper getActiveVacation];
         self.vacationDbList = [NSArray arrayWithObject:self.vacationDatabase];
-        
         NSLog(@"viewWillAppear in MyVacationsTableViewController");
     }
 }

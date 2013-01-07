@@ -204,7 +204,13 @@
                             </imageView>
                         </subviews>
                     </scrollView>
-                    <navigationItem key="navigationItem" id="HRO-x9-meS"/>
+                    <navigationItem key="navigationItem" id="HRO-x9-meS">
+                        <barButtonItem key="rightBarButtonItem" title="Visit" id="xG3-Co-ORW">
+                            <connections>
+                                <action selector="visitPressed:" destination="KO0-nP-uEi" id="2PF-4E-qYl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="buL-jy-3sQ" id="3Mg-Wh-GJC"/>
                         <outlet property="scrollView" destination="wle-ab-X2N" id="aYq-0q-Ce0"/>
@@ -296,7 +302,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
-                                            <segue destination="PZq-Ch-OQU" kind="push" identifier="itiniary segue" id="MKC-OD-JaT"/>
+                                            <segue destination="qs6-ud-qhP" kind="push" identifier="itiniary segue" id="gH2-1I-WZ3"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Gjt-rW-mT9" style="IBUITableViewCellStyleDefault" id="g5p-8B-oJU">
@@ -332,50 +338,34 @@
             <point key="canvasLocation" x="4366" y="-448"/>
         </scene>
         <!--Itiniary Table View Controller-->
-        <scene sceneID="Zmy-Gb-SUF">
+        <scene sceneID="bFP-js-02v">
             <objects>
-                <tableViewController id="PZq-Ch-OQU" customClass="ItiniaryTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="oWM-es-3ns">
+                <tableViewController id="qs6-ud-qhP" customClass="ItiniaryTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="oPx-l9-YoS">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Places cell" textLabel="Fq6-uz-R5f" detailTextLabel="CZU-4E-gyz" style="IBUITableViewCellStyleValue1" id="RB8-rD-7cO">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Places cell" id="S2S-kC-tjg">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Fq6-uz-R5f">
-                                            <rect key="frame" x="10" y="11" width="35" height="21"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CZU-4E-gyz">
-                                            <rect key="frame" x="266" y="11" width="44" height="21"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.2196078431372549" green="0.32941176470588235" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </label>
-                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="PZq-Ch-OQU" id="999-VK-rqB"/>
-                            <outlet property="delegate" destination="PZq-Ch-OQU" id="trN-ly-SHF"/>
+                            <outlet property="dataSource" destination="qs6-ud-qhP" id="Dqg-Ge-APp"/>
+                            <outlet property="delegate" destination="qs6-ud-qhP" id="odV-Dh-eFu"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="LHu-Yu-Heb"/>
+                    <navigationItem key="navigationItem" id="en1-6W-jTb"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xEJ-Ao-19h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3gq-RA-bFG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4875" y="-471"/>
+            <point key="canvasLocation" x="4883" y="-448"/>
         </scene>
         <!--Navigation Controller - Top Places-->
         <scene sceneID="gWW-qF-FgS">
@@ -455,6 +445,48 @@
             <point key="canvasLocation" x="3405" y="-461"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="CoreDataTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CoreDataTableViewController.h"/>
+        </class>
+        <class className="DestinationTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DestinationTableViewController.h"/>
+        </class>
+        <class className="ImageViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ImageViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="deleteDbPressed:"/>
+                <relationship kind="action" name="visitPressed:"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="ItiniaryTableViewController" superclassName="CoreDataTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ItiniaryTableViewController.h"/>
+        </class>
+        <class className="MapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="MyVacationsTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyVacationsTableViewController.h"/>
+        </class>
+        <class className="RecentTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RecentTableViewController.h"/>
+        </class>
+        <class className="TopPlacesViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TopPlacesViewController.h"/>
+        </class>
+        <class className="VacationDetailViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VacationDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="itiniary" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="vacationTags" candidateClass="UITableViewCell"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

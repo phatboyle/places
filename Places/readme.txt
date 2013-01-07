@@ -1,4 +1,12 @@
 todo:
+// make a vacation helper. It has a method to find the vacations on disk (for now default), return the active vacation and set the active vacation.
+
+// test add image
+// test delete vacation
+
+
+
+
 
 the spinner keeps spinning when top places view loads
 see if the spinner works on each view

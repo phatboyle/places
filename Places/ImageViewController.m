@@ -9,16 +9,21 @@
 #import "ImageViewController.h"
 #import "FlickrFetcher.h"
 #import "DiskCache.h"
+#import "VacationHelper.h"
+#import "Photo+Flickr.h"
+
 
 @interface ImageViewController () <UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) UIManagedDocument* vacationDatabase;
 @end
 
 @implementation ImageViewController
 @synthesize scrollView;
 @synthesize imageView;
 @synthesize photoDict;
+@synthesize vacationDatabase = _vacationDatabase;
 
 
 -(void)clearRecentList {
@@ -55,9 +60,47 @@
     [DiskCache storeData:[photoDict objectForKey:@"id"]:image];
     
 }
+- (IBAction)visitPressed:(id)sender {
+    self.vacationDatabase = [VacationHelper getActiveVacation];
+    [self useDocument];
+    [Photo photoWithFlickrInfo:photoDict inManagedObjectContext:self.vacationDatabase];
+    // check this
+
+}
+- (IBAction)deleteDbPressed:(id)sender {
+    self.vacationDatabase = [VacationHelper getActiveVacation];
+    [self useDocument];
+    [self.vacationDatabase closeWithCompletionHandler:^(BOOL success){
+       // add completion handler here
+    }];
+    [VacationHelper deleteActiveVacation];
+
+}
+
+-(void)useDocument
+{
+    if (![[NSFileManager defaultManager] fileExistsAtPath:[self.vacationDatabase.fileURL path]]){
+        [self.vacationDatabase saveToURL:self.vacationDatabase.fileURL forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success) {
+         
+        }];
+        
+    } else if (self.vacationDatabase.documentState == UIDocumentStateClosed){
+        [self.vacationDatabase openWithCompletionHandler:^(BOOL success){
+        }];
+        
+        NSLog(@"useDocument: opened database");
+        
+        
+    } else if (self.vacationDatabase.documentState == UIDocumentStateNormal){
+        NSLog(@"useDocument: db state normal");
+    }
+}
 
 
--(void)setImage:(NSDictionary *)photo withTitle:(NSString *)title{
+
+
+-(void)setImage:(NSDictionary *)photo withTitle:(NSString *)title
+{
     self.photoDict=photo;
     self.title = title;
 }
