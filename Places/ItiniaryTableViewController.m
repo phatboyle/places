@@ -57,6 +57,13 @@
 }
 
 
+// prepareForSegue
+// get the photo to display
+// create a method on the ImageViewController to receive it (possibly by subclassing it)
+
+
+
+
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

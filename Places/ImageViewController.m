@@ -63,8 +63,8 @@
 - (IBAction)visitPressed:(id)sender {
     self.vacationDatabase = [VacationHelper getActiveVacation];
     [self useDocument];
-    [Photo photoWithFlickrInfo:photoDict inManagedObjectContext:self.vacationDatabase];
-    // check this
+    [Photo photoWithFlickrInfo:photoDict inManagedObjectContext:self.vacationDatabase.managedObjectContext];
+    NSLog(@"db: %@", self.vacationDatabase.managedObjectModel);
 
 }
 - (IBAction)deleteDbPressed:(id)sender {
@@ -72,6 +72,7 @@
     [self useDocument];
     [self.vacationDatabase closeWithCompletionHandler:^(BOOL success){
        // add completion handler here
+        NSLog(@"needs completion handler");
     }];
     [VacationHelper deleteActiveVacation];
 

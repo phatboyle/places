@@ -21,7 +21,7 @@
 + (Photo *)photoWithFlickrInfo:(NSDictionary *)flickrInfo
         inManagedObjectContext:(NSManagedObjectContext *)context
 {
-    NSLog(@"%@", [flickrInfo description]);
+    //NSLog(@"%@", [flickrInfo description]);
     Photo *photo = nil;
     // get a list of all photos in the db that have the id of the photo we want to insert
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Photo"];
