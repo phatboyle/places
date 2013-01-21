@@ -39,7 +39,6 @@
 		F1C94FF916862CA70096F327 /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = F1C94FF816862CA70096F327 /* readme.txt */; };
 		F1D0B564167DAA1800F2CAE4 /* FlickrPhotoAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D0B563167DAA1800F2CAE4 /* FlickrPhotoAnnotation.m */; };
 		F1D0B567167E4ACF00F2CAE4 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D0B566167E4ACE00F2CAE4 /* MapViewController.m */; };
-		F1E9A33716A5168C004F8CC6 /* VacationImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E9A33616A5168C004F8CC6 /* VacationImageViewController.m */; };
 		F1F6B22316325A4E009BD9B7 /* DiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F6B22216325A4E009BD9B7 /* DiskCache.m */; };
 /* End PBXBuildFile section */
 
@@ -99,8 +98,6 @@
 		F1D0B563167DAA1800F2CAE4 /* FlickrPhotoAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrPhotoAnnotation.m; sourceTree = "<group>"; };
 		F1D0B565167E4ACE00F2CAE4 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		F1D0B566167E4ACE00F2CAE4 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
-		F1E9A33516A5168B004F8CC6 /* VacationImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VacationImageViewController.h; sourceTree = "<group>"; };
-		F1E9A33616A5168C004F8CC6 /* VacationImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VacationImageViewController.m; sourceTree = "<group>"; };
 		F1F6B22116325A4E009BD9B7 /* DiskCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiskCache.h; sourceTree = "<group>"; };
 		F1F6B22216325A4E009BD9B7 /* DiskCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiskCache.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -212,8 +209,6 @@
 				F1D0B566167E4ACE00F2CAE4 /* MapViewController.m */,
 				F131F6D3162A7BB80009CB77 /* ImageViewController.h */,
 				F131F6D4162A7BB80009CB77 /* ImageViewController.m */,
-				F1E9A33516A5168B004F8CC6 /* VacationImageViewController.h */,
-				F1E9A33616A5168C004F8CC6 /* VacationImageViewController.m */,
 				F131F6C11629F6A00009CB77 /* DestinationTableViewController.h */,
 				F131F6C21629F6A00009CB77 /* DestinationTableViewController.m */,
 				F11857081622687300398592 /* TopPlacesViewController.h */,
@@ -332,7 +327,6 @@
 				F1B3B48D168AC97D00A523D4 /* Place.m in Sources */,
 				F1A3F050169137FF0056AF94 /* ItiniaryTableViewController.m in Sources */,
 				F19A8DD81697EAFE00B4D260 /* VacationHelper.m in Sources */,
-				F1E9A33716A5168C004F8CC6 /* VacationImageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

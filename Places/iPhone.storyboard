@@ -219,7 +219,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zcm-eM-Pdp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5055" y="381"/>
+            <point key="canvasLocation" x="5761" y="195"/>
         </scene>
         <!--My Vacations Table View Controller-->
         <scene sceneID="vMH-SK-8yG">
@@ -355,7 +355,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="AcF-hp-d2S" kind="push" id="PQn-CC-8lm"/>
+                                    <segue destination="KO0-nP-uEi" kind="push" id="Vyd-kQ-iq9"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -369,27 +369,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3gq-RA-bFG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4883" y="-448"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="y4u-c9-83w">
-            <objects>
-                <viewController id="AcF-hp-d2S" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="85j-Zl-6LI">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="o3B-sy-TKd">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="crU-D9-g2o"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gSw-Bm-vUW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5345" y="-448"/>
         </scene>
         <!--Navigation Controller - Top Places-->
         <scene sceneID="gWW-qF-FgS">
@@ -476,6 +455,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="efW-nq-7tu"/>
-        <segue reference="HJS-bR-LDc"/>
+        <segue reference="Vyd-kQ-iq9"/>
     </inferredMetricsTieBreakers>
 </document>

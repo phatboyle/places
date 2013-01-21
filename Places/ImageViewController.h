@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Photo+Flickr.h"
 
 @interface ImageViewController : UIViewController
 
 @property (nonatomic, strong) NSDictionary *photoDict;
--(void)setImage:(NSDictionary *)photo withTitle:(NSString *)title;
+@property (nonatomic, strong) Photo *coreDataPhoto;
+-(void)setImage:(NSDictionary *)photoD withTitle:(NSString *)title;
+-(void)setCoreDataImage:(Photo *) photo;
+
 
 @end

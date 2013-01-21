@@ -24,6 +24,7 @@
 @synthesize imageView;
 @synthesize photoDict;
 @synthesize vacationDatabase = _vacationDatabase;
+@synthesize coreDataPhoto = _coreDataPhoto;
 
 
 -(void)clearRecentList {
@@ -100,25 +101,42 @@
 
 
 
--(void)setImage:(NSDictionary *)photo withTitle:(NSString *)title
+-(void)setImage:(NSDictionary *)photoD withTitle:(NSString *)title
 {
-    self.photoDict=photo;
+    self.photoDict=photoD;
     self.title = title;
 }
- 
-
-- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+-(void)setCoreDataImage:(Photo *)photo
 {
-    return self.imageView;
+    self.coreDataPhoto = photo;
 }
 
-- (void)viewDidLoad
+-(void)loadPhoto
 {
-    [super viewDidLoad];
+    NSString *title = @"Photo";
+    NSString *photoID;
+    NSData* image = nil;
+    
+    if (self.photoDict) {
+        title = nil;
+        photoID = [[self.photoDict objectForKey:FLICKR_PHOTO_ID] copy];
+        image = [DiskCache fetchData:photoID];
+        if (!image){
+            image = [NSData dataWithContentsOfURL:[FlickrFetcher urlForPhoto:photoDict format:FlickrPhotoFormatLarge] ];
+        }
+    }
+    if (self.coreDataPhoto) {
+        title = nil;
+        photoID = [self.coreDataPhoto.unique copy];
+        image = [DiskCache fetchData:photoID];
+        if(!image){
+            image = [NSData dataWithContentsOfURL:[NSURL URLWithString:self.coreDataPhoto.imageURL]];
+        }
+        
+    }
     self.scrollView.delegate = self;
-    NSData *image = [self getImageData];
     self.imageView.image = [UIImage imageWithData:image];
-    [self updateCache:image];
+    [self updateCache:image];   // understand this
     self.scrollView.contentSize = self.imageView.image.size;
     self.imageView.frame = CGRectMake(0, 0, self.imageView.image.size.width, self.imageView.image.size.height);
     [self updateRecentList];
@@ -130,19 +148,19 @@
     self.scrollView.zoomScale = MAX(widthRatio,heightRatio);
 }
 
-- (NSData *) getImageData {
-    NSData *image = [DiskCache fetchData:[photoDict objectForKey:@"id"]];
-    if (!image){
-        image = [NSData dataWithContentsOfURL:[FlickrFetcher urlForPhoto:photoDict format:FlickrPhotoFormatLarge] ];
-    }
-    return image;
-    
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return self.imageView;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+- (void)viewDidLoad
 {
-    return YES;
+    [super viewDidLoad];
+
 }
+
+
 
 
 

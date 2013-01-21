@@ -8,6 +8,7 @@
 
 #import "ItiniaryTableViewController.h"
 #import "Place.h"
+#import "ImageViewController.h"
 
 @interface ItiniaryTableViewController ()
 @property (nonatomic, strong) UIManagedDocument *vacationDatabase;
@@ -56,13 +57,15 @@
     return cell;
 }
 
-
-// prepareForSegue
-// get the photo to display
-// create a method on the ImageViewController to receive it (possibly by subclassing it)
-
-
-
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    [super prepareForSegue:segue sender:sender];
+    if ([segue.identifier isEqualToString:@"Show Photo"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        Photo *photo = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        [segue.destinationViewController performSelector:@selector(setCoreDataPhoto:) withObject:photo];
+    }
+}
 
 #pragma mark - Table view delegate
 
